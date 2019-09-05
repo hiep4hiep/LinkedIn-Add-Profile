@@ -45,19 +45,14 @@ def connect():
 def run(b):
     d = convert_boolean(str(b))
 
-    for i in range(1, 5):
+    for i in range(1, 21):
 
         if i == 1:
             d = d[0:-1] + '&page=' + str(i)
         if i in range(1, 11):
             d = d[0:-1] + str(i)
-            print(i)
         if i >= 11:
             d = d[0:-2] + str(i)
-            print(i)
-
-        # d = input("Link to Boolean search profile: ")
-        # n = str(input("Note to candidate: "))
 
         options = Options()
         options.add_argument("user-data-dir=/tmp/thanh")
@@ -65,7 +60,6 @@ def run(b):
         driver.get(d)
 
         time.sleep(3)
-        # take_screenshot()
 
         for pos in list(pag.locateAllOnScreen('small_button.png', region=(1754, 400, 260, 1800))):
             cen = pag.center(pos)
