@@ -5,6 +5,14 @@ import time
 
 #SCROLL_PAUSE_TIME = 0.5
 
+def convert_boolean(s):
+    snew = str(s).replace(' ','%20')
+    snew = snew.replace('"','%22')
+    snew = snew.replace('&','%26')
+    sfull = 'https://www.linkedin.com/search/results/people/?keywords='+snew+'&origin=SWITCH_SEARCH_VERTICAL '
+    return(sfull)
+
+
 def find_button_and_click(button):
     buttonx, buttony = pag.locateCenterOnScreen(button, region=(2700,800,700,700))
     print(buttonx//2)
@@ -34,10 +42,10 @@ def connect():
     find_button_and_click('my_button.png')
     send_note()
 
-def run():
-    d = input("Search link:")
+def run(b):
+    d = convert_boolean(str(b))
 
-    for i in range(1, 25):
+    for i in range(1, 5):
 
         if i == 1:
             d = d[0:-1] + '&page=' + str(i)
@@ -66,4 +74,13 @@ def run():
         driver.quit()
 
 if __name__ == '__main__':
-    run()
+    booleanstring1 = input("String 1:")
+    booleanstring2 = input("String 2:")
+    booleanstring3 = input("String 3:")
+    booleanstring4 = input("String 4:")
+    booleanstring5 = input("String 5:")
+    run(booleanstring1)
+    run(booleanstring2)
+    run(booleanstring3)
+    run(booleanstring4)
+    run(booleanstring5)
