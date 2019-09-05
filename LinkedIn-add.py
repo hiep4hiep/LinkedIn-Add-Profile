@@ -27,7 +27,7 @@ def send_note(position):
     print(position[0],position[1])
     pag.click(int(position[0])//2,int(position[1])//2)
     pag.click(867,247)
-    pag.typewrite("Hi, I am Thanh from Deloitte, I'd like to connect with you for future opportunity from us. If you are interested please kindly share with me your email/contact info for further discussion. BRs, thanhtle@deloitte.com")
+    pag.typewrite("Hi, please connect with me")
     pag.click(927,305)
     pag.click(90,252)
     time.sleep(2)
@@ -55,8 +55,8 @@ def run(b):
             d = d[0:-2] + str(i)
 
         options = Options()
-        options.add_argument("user-data-dir=/tmp/thanh")
-        driver = webdriver.Chrome('/Users/hnguyen/chromedriver', chrome_options=options)
+        options.add_argument("user-data-dir=/tmp/xxx")
+        driver = webdriver.Chrome('/Users/xxx/chromedriver', chrome_options=options)
         driver.get(d)
 
         time.sleep(3)
